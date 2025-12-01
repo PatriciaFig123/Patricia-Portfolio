@@ -192,6 +192,7 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 .about {
@@ -365,6 +366,10 @@ textarea:focus {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+#contact .footer-links {
   margin-top: 1.5rem;
 }
 
