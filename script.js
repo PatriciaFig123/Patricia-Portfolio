@@ -1,10 +1,8 @@
-// Footer year
 const yearSpan = document.getElementById("current-year");
 if (yearSpan) {
   yearSpan.textContent = new Date().getFullYear().toString();
 }
 
-// Smooth scroll from hero button to Projects section
 const ctaButton = document.getElementById("cta-button");
 if (ctaButton) {
   ctaButton.addEventListener("click", () => {
@@ -15,7 +13,6 @@ if (ctaButton) {
   });
 }
 
-// Mobile nav toggle
 const navToggle = document.querySelector(".nav-toggle");
 const navLinks = document.querySelector(".nav-links");
 
@@ -24,7 +21,6 @@ if (navToggle && navLinks) {
     navLinks.classList.toggle("open");
   });
 
-  // Close menu when a link is clicked (on mobile)
   navLinks.addEventListener("click", (event) => {
     if (event.target instanceof HTMLAnchorElement) {
       navLinks.classList.remove("open");
@@ -32,12 +28,13 @@ if (navToggle && navLinks) {
   });
 }
 
-// Simple contact form validation (client-side only)
 const contactForm = document.getElementById("contact-form");
 const feedback = document.getElementById("form-feedback");
 
 function showError(fieldName, message) {
-  const span = document.querySelector(`.error-message[data-for="${fieldName}"]`);
+  const span = document.querySelector(
+    `.error-message[data-for="${fieldName}"]`
+  );
   if (span) {
     span.textContent = message;
   }
@@ -95,11 +92,8 @@ if (contactForm && feedback) {
       return;
     }
 
-    // Simulate a successful submit (since we don't have a backend here)
     contactForm.reset();
     feedback.textContent = "Thank you! Your message has been sent (demo).";
     feedback.style.color = "#4ade80";
   });
 }
-
-
