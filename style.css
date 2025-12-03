@@ -177,16 +177,17 @@ img {
   box-shadow: 0 16px 40px rgba(56, 189, 248, 0.5);
 }
 .secondary-btn {
-  background: none;
-  color: var(--text);
-  border: 1px solid var(--muted);
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  text-decoration: none;
+  display: inline-block;
+  margin-left: 1rem;
 }
-
 .secondary-btn:hover {
-  background: var(
-    --accent-soft
-  ); /* Fundo suave na cor de destaque ao passar o mouse */
+  background: var(--accent-soft);
   transform: translateY(-1px);
+  border-color: var(--accent);
 }
 
 .hero-image {
@@ -315,6 +316,98 @@ img {
 }
 
 .project-link:hover {
+  text-decoration: underline;
+}
+
+.certificates-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.certificate-card {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.6);
+  transition: transform var(--transition), box-shadow var(--transition),
+    border-color var(--transition);
+  position: relative;
+}
+
+.certificate-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.9);
+  border-color: var(--accent);
+}
+
+.certificate-link {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding-top: 70%; /* Slightly smaller aspect ratio */
+  overflow: hidden;
+}
+
+.certificate-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition);
+}
+
+.certificate-card:hover .certificate-image {
+  transform: scale(1.05);
+}
+
+.certificate-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition);
+  pointer-events: none;
+}
+
+.certificate-card:hover .certificate-overlay {
+  opacity: 1;
+}
+
+.certificate-overlay span {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.certificate-verify {
+  text-align: center;
+  margin-top: 2rem;
+  color: var(--muted);
+}
+
+.verify-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition);
+}
+
+.verify-link:hover {
+  color: var(--text);
   text-decoration: underline;
 }
 
